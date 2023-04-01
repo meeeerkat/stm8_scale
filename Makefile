@@ -2,8 +2,12 @@
 SDCC=sdcc -lstm8 -mstm8 --out-fmt-ihx --std-sdcc11
 
 
+
 load: main.ihx
 	sudo stm8flash -c stlinkv2 -p stm8s003f3 -w main.ihx
+
+monitor: load
+	./monitor.sh
 
 main.ihx: main.c print.rel uart.rel
 	${SDCC} main.c print.rel uart.rel
