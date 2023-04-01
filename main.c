@@ -1,12 +1,9 @@
 #include <stdint.h>
 #include <stdio.h>
-#include "../STM8S103F3.h"
+#include "print.h"
 #include "uart.h"
+#include "../STM8S103F3.h"
 
-int putchar(int data) {
-  UART_write(data);
-  return data;
-}
 
 void main (void) {
 

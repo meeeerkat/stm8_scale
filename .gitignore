@@ -1,0 +1,10 @@
+
+# generated during compilation
+*.rel
+*.ihx
+*.rst
+*.map
+*.lk
+*.sym
+*.asm
+*.lst

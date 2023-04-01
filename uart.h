@@ -1,5 +1,4 @@
-#ifndef _UART_H_
-#define _UART_H_
+#pragma once
 
 #include <stdint.h>
 #include "../STM8S103F3.h"
@@ -21,5 +20,3 @@
 /// initialize UART
 void UART_begin(uint32_t BR);
 
-
-#endif // _UART_H_
