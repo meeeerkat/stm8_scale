@@ -3,7 +3,10 @@
 #include "../STM8S103F3.h"
 #include "uart.h"
 
-
+int putchar(int data) {
+  UART_write(data);
+  return data;
+}
 
 void main (void) {
 
@@ -18,7 +21,7 @@ void main (void) {
   uint8_t i=0;
   while(1) {
     // if byte received, send echo + 1
-    UART_write(i);
+    printf("n%u\n", i);
     i++;
   }
 
