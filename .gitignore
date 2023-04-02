@@ -8,3 +8,6 @@
 *.sym
 *.asm
 *.lst
+
+doc/*
+!doc/links
