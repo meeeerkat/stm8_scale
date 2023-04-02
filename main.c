@@ -16,25 +16,24 @@ void main (void) {
   
 
   port_t dt = {
-    .port = &sfr_PORTD,
-    .pin = 0
+    .port = &sfr_PORTC,
+    .pin = 6
   };
 
   port_t sck = {
-    .port = &sfr_PORTD,
-    .pin = 1
+    .port = &sfr_PORTC,
+    .pin = 7
   };
 
   hx711_t* hx711 = hx711__init(&dt, &sck);
+
     
   printf("start\n");
-
-  uint8_t i=0;
-  while(i < 120) {
-    i++;
+  while (1) {
+    //sck.port->ODR.byte ^= 1 << sck.pin;
+    uint32_t mesure = hx711__take_mesure(hx711);
+    printf("%lu\n", mesure);
     delay_us(1000000);
   }
-
-  printf("end\n");
 
 }

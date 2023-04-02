@@ -16,10 +16,10 @@ main.ihx: main.c print.rel uart.rel hx711.rel *.h
 print.rel: uart.rel
 	${SDCC} -c print.c uart.rel
 
-uart.rel:
+uart.rel: uart.h
 	${SDCC} -c uart.c
 
-hx711.rel:
+hx711.rel: hx711.h port.h delay.h
 	${SDCC} -c hx711.c
 
 
