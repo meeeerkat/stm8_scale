@@ -18,7 +18,7 @@ void UART_begin(uint32_t BR) {
   sfr_UART1.CR3.byte = sfr_UART1_CR3_RESET_VALUE;  // no LIN support, 1 stop bit, no clock output(?)
 
   // set baudrate (note: BRR2 must be written before BRR1!)
-  val16 = (uint16_t) (((uint32_t) 16000000L)/BR);
+  val16 = (uint16_t) (((uint32_t) F_CPU)/BR);
   sfr_UART1.BRR2.byte = (uint8_t) (((val16 & 0xF000) >> 8) | (val16 & 0x000F));
   sfr_UART1.BRR1.byte = (uint8_t) ((val16 & 0x0FF0) >> 4);
 

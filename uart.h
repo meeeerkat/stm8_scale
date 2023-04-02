@@ -1,7 +1,7 @@
 #pragma once
 
 #include <stdint.h>
-#include "../STM8S103F3.h"
+#include "my_STM8S103F3.h"
 
 
 /// check if byte received via UART2
